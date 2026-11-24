@@ -6,10 +6,13 @@ import ProductCard from "../components/ProductCard";
 
 const CATEGORY_CARDS = [
   ["Robes", PRODUCTS[0]],
-  ["Ensembles", PRODUCTS[1]],
-  ["Manteaux", PRODUCTS[2]],
-  ["Jupes", PRODUCTS[5]],
+  ["Shorts", PRODUCTS[8]],
+  ["Hauts", PRODUCTS[10]],
+  ["Sweats", PRODUCTS[12]],
 ];
+
+const POPULAR_IDS = [1, 12, 9, 13, 2, 16, 6, 8];
+const POPULAR = POPULAR_IDS.map((id) => PRODUCTS.find((p) => p.id === id));
 
 export default function Home() {
   const categoryCount = (c) => PRODUCTS.filter((p) => p.category === c).length;
@@ -166,7 +169,7 @@ export default function Home() {
         </div>
         <div className="max-w-[1440px] mx-auto md:px-10">
           <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-4 px-5 md:px-0">
-            {PRODUCTS.slice(0, 8).map((p) => (
+            {POPULAR.map((p) => (
               <div
                 key={p.id}
                 className="snap-start shrink-0 w-[72vw] sm:w-[42vw] lg:w-[22vw] xl:w-[300px]"
@@ -283,7 +286,7 @@ export default function Home() {
               <div>
                 <p className="label-caps text-zinc-400 mb-4">Pour les soirées</p>
                 <ul className="divide-y divide-zinc-200 border-y border-zinc-200">
-                  {[PRODUCTS[7], PRODUCTS[1]].map((p) => (
+                  {[PRODUCTS[15], PRODUCTS[7], PRODUCTS[11]].map((p) => (
                     <li
                       key={p.id}
                       className="flex items-center gap-4 py-3.5 text-sm"
