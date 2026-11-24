@@ -40,8 +40,8 @@ export default function Boutique() {
           {cat === "Tous" ? "La Boutique" : cat}
         </h1>
         <p className="text-zinc-500 text-sm mt-3">
-          {products.length} pièce{products.length > 1 ? "s" : ""} — prix en francs
-          congolais
+          {products.length} pièce{products.length > 1 ? "s" : ""} — prix en dollars
+          américains
         </p>
       </div>
 

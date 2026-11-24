@@ -95,7 +95,7 @@ export default function Checkout() {
             Confirmer la commande — {fmt(total + shipping)}
           </Button>
           <p className="label-caps text-zinc-400 text-center">
-            Livraison offerte dès 100 000 CDF
+            Livraison offerte dès $100 · Kinshasa
           </p>
         </form>
       </div>

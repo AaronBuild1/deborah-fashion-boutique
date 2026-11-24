@@ -19,8 +19,8 @@ export default function Home() {
       {/* Hero typographique */}
       <section className="px-5 md:px-10 pt-12 md:pt-20 pb-12 md:pb-16">
         <div className="max-w-[1440px] mx-auto animate-fadeup">
-          <p className="label-caps text-accent">Nouvelle collection — 2026</p>
-          <h1 className="mt-6 md:mt-8 font-display font-bold uppercase leading-[0.95] tracking-tight text-[clamp(2.9rem,11.5vw,9.5rem)]">
+          <p className="label-caps text-accent">Kinshasa · Prêt-à-porter femme · 2026</p>
+          <h1 className="mt-6 md:mt-8 font-display font-bold uppercase leading-[0.95] tracking-tight text-[clamp(2.3rem,9.6vw,9rem)]">
             L'élégance
             <br />
             <span className="italic font-medium text-accent">africaine</span>
@@ -29,9 +29,9 @@ export default function Home() {
           </h1>
           <div className="mt-10 md:mt-14 grid md:grid-cols-12 gap-6 items-end">
             <p className="md:col-span-5 text-zinc-600 leading-relaxed max-w-md">
-              Robes, ensembles et pièces signature cousus avec soin dans des
-              ateliers de Kinshasa. Une garde-robe pensée pour la femme
-              d'aujourd'hui, livrée partout en RDC.
+              Robes, ensembles et pièces signature cousus avec soin dans nos
+              ateliers de Kinshasa. Prêt-à-porter femme, livré partout en RDC
+              et payé en dollars ou mobile money.
             </p>
             <div className="md:col-span-7 flex flex-wrap items-center gap-x-8 gap-y-4 md:justify-end">
               <Button
@@ -100,7 +100,7 @@ export default function Home() {
             <div className="bg-ink text-paper p-8 md:p-10 flex flex-col justify-between aspect-[4/3] md:aspect-auto">
               <p className="label-caps text-paper/50">Livraison offerte</p>
               <p className="font-display text-3xl md:text-4xl leading-tight mt-6">
-                Dès 100 000 CDF, partout en RDC.
+                Dès $100, partout en RDC.
               </p>
               <p className="text-paper/50 text-sm mt-6 leading-relaxed">
                 Paiement à la livraison, Mobile Money ou carte bancaire.
@@ -179,8 +179,15 @@ export default function Home() {
       </section>
 
       {/* Offre de lancement */}
-      <section className="bg-ink text-paper">
-        <div className="max-w-[1440px] mx-auto px-5 md:px-10 py-14 md:py-20 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+      <section className="relative overflow-hidden">
+        <img
+          src={PRODUCTS[1].img}
+          alt=""
+          loading="lazy"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-ink/85" />
+        <div className="relative max-w-[1440px] mx-auto px-5 py-14 md:py-20 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 text-paper">
           <div>
             <p className="label-caps text-accent">Offre de lancement</p>
             <h2 className="font-display text-3xl md:text-5xl mt-4 leading-tight">
@@ -249,11 +256,19 @@ export default function Home() {
                   {[PRODUCTS[4], PRODUCTS[5], PRODUCTS[0]].map((p) => (
                     <li
                       key={p.id}
-                      className="flex items-baseline justify-between gap-4 py-4 text-sm"
+                      className="flex items-center gap-4 py-3.5 text-sm"
                     >
+                      <Link to={`/produit/${p.id}`} className="shrink-0">
+                        <img
+                          src={p.img}
+                          alt={p.name}
+                          loading="lazy"
+                          className="w-12 h-14 object-cover"
+                        />
+                      </Link>
                       <Link
                         to={`/produit/${p.id}`}
-                        className="hover:text-accent transition-colors duration-300"
+                        className="flex-1 hover:text-accent transition-colors duration-300"
                       >
                         {p.name}
                       </Link>
@@ -271,11 +286,19 @@ export default function Home() {
                   {[PRODUCTS[7], PRODUCTS[1]].map((p) => (
                     <li
                       key={p.id}
-                      className="flex items-baseline justify-between gap-4 py-4 text-sm"
+                      className="flex items-center gap-4 py-3.5 text-sm"
                     >
+                      <Link to={`/produit/${p.id}`} className="shrink-0">
+                        <img
+                          src={p.img}
+                          alt={p.name}
+                          loading="lazy"
+                          className="w-12 h-14 object-cover"
+                        />
+                      </Link>
                       <Link
                         to={`/produit/${p.id}`}
-                        className="hover:text-accent transition-colors duration-300"
+                        className="flex-1 hover:text-accent transition-colors duration-300"
                       >
                         {p.name}
                       </Link>
@@ -300,7 +323,7 @@ export default function Home() {
 
       {/* Grande phrase de marque */}
       <section className="border-t border-zinc-200 py-20 md:py-32 px-5 md:px-10 text-center">
-        <p className="label-caps text-zinc-400">Deborah Fashion Boutique</p>
+        <p className="label-caps text-zinc-400">Deborah Fashion — Kinshasa</p>
         <h2 className="mx-auto mt-8 md:mt-10 max-w-6xl font-display uppercase tracking-[0.06em] leading-[1.08] text-[clamp(2.4rem,7.5vw,6.5rem)] animate-fadeup">
           Un style, pour chaque{" "}
           <span className="italic text-accent">histoire</span>.

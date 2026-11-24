@@ -1,6 +1,6 @@
-# Deborah Fashion Boutique — Maquette e-commerce
+# Deborah Fashion — Maquette e-commerce
 
-Boutique e-commerce de démonstration (style Shopify) pour **Deborah Fashion Boutique**, spécialisée dans la mode femme africaine contemporaine, livrée en RDC.
+Boutique e-commerce de démonstration (style Shopify) pour **Deborah Fashion Boutique**, spécialisée dans le prêt-à-porter femme africain contemporain, livrée en RDC.
 
 ## Contenu
 
@@ -11,7 +11,7 @@ Boutique e-commerce de démonstration (style Shopify) pour **Deborah Fashion Bou
 - Tunnel de commande (Mobile Money, paiement à la livraison, carte bancaire)
 - Page "À propos" et footer avec newsletter
 
-Prix indicatifs en francs congolais (CDF). Maquette : aucune commande réelle n'est passée.
+Prix indicatifs en dollars américains (USD). Maquette : aucune commande réelle n'est passée.
 
 ## Stack
 

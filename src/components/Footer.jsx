@@ -8,12 +8,13 @@ export default function Footer() {
     <footer className="bg-ink text-paper">
       <div className="max-w-[1440px] mx-auto px-5 md:px-10 py-14 md:py-20 grid gap-12 md:grid-cols-12">
         <div className="md:col-span-4">
-          <p className="font-display text-3xl tracking-tight">
-            Deborah<span className="text-accent">.</span>
+          <p className="font-display text-2xl tracking-tight">
+            Deborah <span className="italic text-accent">Fashion</span>
           </p>
           <p className="text-paper/50 text-sm mt-4 max-w-xs leading-relaxed">
-            Mode femme africaine contemporaine. Pièces signature confectionnées
-            avec des ateliers locaux, livrées partout en RDC.
+            Boutique de prêt-à-porter féminin basée à Kinshasa. Pièces
+            signature confectionnées avec des ateliers locaux, livrées partout
+            en RDC.
           </p>
           <div className="flex gap-5 mt-6">
             <a
@@ -74,7 +75,7 @@ export default function Footer() {
           <ul className="space-y-3 text-sm text-paper/70">
             <li>bonjour@deborahfashion.cd</li>
             <li>WhatsApp : +243 · · · · · ·</li>
-            <li className="text-paper/40">Kinshasa · Goma, RDC</li>
+            <li className="text-paper/40">Avenue du Commerce, Kinshasa, RDC</li>
           </ul>
           <p className="label-caps text-paper/40 mt-8 mb-3">Paiement</p>
           <p className="text-sm text-paper/70">
@@ -86,11 +87,11 @@ export default function Footer() {
           <div className="flex flex-wrap gap-3">
             <select
               aria-label="Devise"
-              defaultValue="CDF"
+              defaultValue="USD"
               className="bg-transparent border border-paper/25 px-3 py-2.5 text-[11px] uppercase tracking-[0.14em] text-paper/80 focus-visible:outline-none focus-visible:border-accent"
             >
+              <option className="text-ink">USD — Dollar américain</option>
               <option className="text-ink">CDF — Franc congolais</option>
-              <option className="text-ink">USD — Dollar</option>
             </select>
             <select
               aria-label="Langue"
@@ -112,7 +113,7 @@ export default function Footer() {
 
       <div className="border-t border-paper/10">
         <div className="max-w-[1440px] mx-auto px-5 md:px-10 py-5 flex flex-col sm:flex-row justify-between gap-2 text-[10px] uppercase tracking-[0.22em] text-paper/40">
-          <span>© 2026 Deborah Fashion Boutique</span>
+          <span>© 2026 Deborah Fashion — Kinshasa</span>
           <span>Maquette de démonstration</span>
         </div>
       </div>

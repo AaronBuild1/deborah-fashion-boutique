@@ -17,8 +17,8 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50">
-      <div className="bg-ink text-paper text-center py-2.5 text-[10px] md:text-[11px] uppercase tracking-[0.28em]">
-        Livraison offerte dès 100 000 CDF — Kinshasa & Goma
+      <div className="bg-ink text-paper text-center py-2.5 px-4 text-[10px] uppercase tracking-[0.28em]">
+        Livraison offerte dès $100 — Boutique de Kinshasa
       </div>
       <div className="bg-paper/95 backdrop-blur border-b border-zinc-200">
         <div className="max-w-[1440px] mx-auto px-5 md:px-10 h-16 md:h-20 flex items-center gap-6">
@@ -30,8 +30,8 @@ export default function Header() {
             {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
 
-          <Link to="/" className="font-display text-2xl md:text-3xl tracking-tight shrink-0">
-            Deborah<span className="text-accent">.</span>
+          <Link to="/" className="font-display text-xl md:text-2xl tracking-tight shrink-0">
+            Deborah <span className="italic text-accent">Fashion</span>
           </Link>
 
           <nav

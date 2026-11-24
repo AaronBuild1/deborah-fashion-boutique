@@ -39,7 +39,7 @@ export default function ProductCard({ p }) {
       <div className="pt-4 flex items-start justify-between gap-4">
         <div className="min-w-0">
           <p className="label-caps text-zinc-400">{p.category}</p>
-          <h3 className="font-display text-lg md:text-xl leading-snug mt-1.5 group-hover:text-accent transition-colors duration-500">
+          <h3 className="font-display text-base md:text-xl leading-snug mt-1.5 group-hover:text-accent transition-colors duration-500">
             {p.name}
           </h3>
           <div className="flex gap-1.5 mt-2.5">
