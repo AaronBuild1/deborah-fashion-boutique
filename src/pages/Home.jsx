@@ -6,7 +6,7 @@ import ProductCard from "../components/ProductCard";
 
 const CATEGORY_CARDS = [
   ["Robes", PRODUCTS[0]],
-  ["Shorts", PRODUCTS[8]],
+  ["Shorts", PRODUCTS[9]],
   ["Hauts", PRODUCTS[10]],
   ["Sweats", PRODUCTS[12]],
 ];
