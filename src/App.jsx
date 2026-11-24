@@ -31,13 +31,10 @@ function Input({ className = "", ...props }) {
   );
 }
 
-function useSheetClose() {
-  const { setOpen } = React.useContext(SheetCtx);
-  return () => setOpen(false);
-}
-
-function Sheet({ children }) {
-  const [open, setOpen] = useState(false);
+function Sheet({ children, open: controlledOpen, setOpen: controlledSetOpen }) {
+  const [internalOpen, setInternalOpen] = useState(false);
+  const open = controlledOpen ?? internalOpen;
+  const setOpen = controlledSetOpen ?? setInternalOpen;
   return <SheetCtx.Provider value={{ open, setOpen }}>{children}</SheetCtx.Provider>;
 }
 
@@ -183,9 +180,10 @@ function StoreProvider({ children }) {
 function CartSheet({ children }) {
   const { items, remove, total } = useCart();
   const nav = useNavigate();
-  const closeSheet = useSheetClose();
+  const [open, setOpen] = useState(false);
+  const closeSheet = () => setOpen(false);
   return (
-    <Sheet>
+    <Sheet open={open} setOpen={setOpen}>
       <SheetTrigger asChild>{children}</SheetTrigger>
       <SheetContent className="w-full sm:max-w-md p-0 flex flex-col">
         <SheetHeader className="border-b p-5">
