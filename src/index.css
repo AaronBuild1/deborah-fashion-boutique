@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #18181b;
+  background: #ffffff;
+}
+
+.animated-drawer {
+  animation: drawerIn 0.25s ease-out;
+}
+
+@keyframes drawerIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+img {
+  max-width: 100%;
+}
