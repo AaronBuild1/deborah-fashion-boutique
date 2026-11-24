@@ -9,6 +9,29 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      // Affiche les erreurs JS visuellement au lieu d'un ecran blanc silencieux
+      window.addEventListener('error', function (e) {
+        var el = document.getElementById('build-error');
+        if (!el) {
+          el = document.createElement('pre');
+          el.id = 'build-error';
+          el.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:9999;background:#7f1d1d;color:#fff;padding:16px;font-size:12px;white-space:pre-wrap;margin:0;';
+          document.body && document.body.appendChild(el);
+        }
+        el.textContent = 'Erreur JS: ' + e.message + '\n' + (e.filename || '') + ':' + (e.lineno || '');
+      });
+      window.addEventListener('unhandledrejection', function (e) {
+        var el = document.getElementById('build-error');
+        if (!el) {
+          el = document.createElement('pre');
+          el.id = 'build-error';
+          el.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:9999;background:#7f1d1d;color:#fff;padding:16px;font-size:12px;white-space:pre-wrap;margin:0;';
+          document.body && document.body.appendChild(el);
+        }
+        el.textContent = 'Erreur: ' + (e.reason && e.reason.message ? e.reason.message : e.reason);
+      });
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

@@ -272,8 +272,8 @@ function Footer() {
           <p className="font-serif text-xl text-white mb-2">Deborah<span className="text-rose-500">.</span>fashion</p>
           <p className="text-zinc-400">Mode femme africaine contemporaine. Goma · Kinshasa, RDC.</p>
           <div className="flex gap-3 mt-4">
-            <ChevronRight className="w-4 h-4 text-zinc-500" />
-            <ChevronRight className="w-4 h-4 text-zinc-500" />
+            <Instagram className="w-4 h-4 text-zinc-500" />
+            <Facebook className="w-4 h-4 text-zinc-500" />
             <Mail className="w-4 h-4 text-zinc-500" />
           </div>
         </div>
