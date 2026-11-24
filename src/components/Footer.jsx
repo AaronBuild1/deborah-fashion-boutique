@@ -32,7 +32,9 @@ export default function Footer() {
               <Facebook className="w-4 h-4" strokeWidth={1.5} />
             </a>
             <a
-              href="#"
+              href="https://wa.me/243819040601"
+              target="_blank"
+              rel="noreferrer"
               aria-label="WhatsApp"
               className="text-paper/50 hover:text-accent transition-colors duration-300"
             >
@@ -74,7 +76,16 @@ export default function Footer() {
           <p className="label-caps text-paper/40 mb-5">Contact</p>
           <ul className="space-y-3 text-sm text-paper/70">
             <li>bonjour@deborahfashion.cd</li>
-            <li>WhatsApp : +243 · · · · · ·</li>
+            <li>
+              <a
+                href="https://wa.me/243819040601"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-accent transition-colors duration-300"
+              >
+                WhatsApp : +243 819 040 601
+              </a>
+            </li>
             <li className="text-paper/40">Avenue du Commerce, Kinshasa, RDC</li>
           </ul>
           <p className="label-caps text-paper/40 mt-8 mb-3">Paiement</p>
