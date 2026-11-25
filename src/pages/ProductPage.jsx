@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import { ShoppingBag, Star, Truck, RefreshCw, ShieldCheck, Heart } from "lucide-react";
-import { PRODUCTS, fmt, promoLabel } from "../data/products";
+import { ShoppingBag, Truck, RefreshCw, ShieldCheck, Heart, Sparkles } from "lucide-react";
+import { getProduct, fmt, promoLabel } from "../data/products";
 import { useCart } from "../store/cart";
 import { Button } from "../components/ui";
 
 export default function ProductPage() {
   const { id } = useParams();
-  const p = PRODUCTS.find((x) => x.id === Number(id));
-  const [size, setSize] = useState("M");
-  const [color, setColor] = useState(null);
+  const p = getProduct(Number(id));
+  const [selectedSize, setSize] = useState(null);
+  const [selectedColor, setColor] = useState(null);
   const [imgIdx, setImgIdx] = useState(0);
   const { add } = useCart();
   const nav = useNavigate();
@@ -27,8 +27,10 @@ export default function ProductPage() {
       </div>
     );
 
-  const shownColor = color || "#d0d5dd";
+  const size = selectedSize ?? p.sizes[0];
+  const color = selectedColor ?? p.colors[0] ?? "#d0d5dd";
   const label = promoLabel(p);
+  const discount = p.oldPrice ? Math.round((1 - p.price / p.oldPrice) * 100) : null;
 
   return (
     <div className="max-w-[1440px] mx-auto px-5 md:px-10 py-8 md:py-12">
@@ -42,7 +44,7 @@ export default function ProductPage() {
         </Link>
         <span className="mx-2">/</span>
         <Link
-          to={`/boutique?cat=${p.category}`}
+          to={`/boutique?cat=${encodeURIComponent(p.category)}`}
           className="hover:text-accent transition-colors duration-300"
         >
           {p.category}
@@ -53,11 +55,15 @@ export default function ProductPage() {
 
       <div className="grid md:grid-cols-2 gap-8 md:gap-16 mt-8 md:mt-12">
         <div>
-          <div className="relative overflow-hidden bg-zinc-100 aspect-[3/4]">
-            <img src={p.imgs[imgIdx]} alt={p.name} className="w-full h-full object-cover" />
-            {p.oldPrice && (
-              <span className="label-caps absolute top-0 left-0 px-3 py-2 bg-accent text-paper">
-                Promo
+          <div className="relative overflow-hidden bg-cream-soft aspect-[3/4]">
+            <img src={p.imgs[imgIdx] ?? p.img} alt={p.name} className="w-full h-full object-cover" />
+            {label && (
+              <span
+                className={`label-caps absolute top-0 left-0 px-3 py-2 ${
+                  p.oldPrice ? "bg-accent text-paper" : "bg-paper/95 text-ink"
+                }`}
+              >
+                {label}
               </span>
             )}
           </div>
@@ -78,62 +84,50 @@ export default function ProductPage() {
         </div>
 
         <div className="md:pt-4 animate-fadeup">
-          <p className="label-caps text-zinc-400">{p.category}</p>
+          <p className="label-caps text-zinc-400">
+            {p.category} · Réf. {p.ref}
+          </p>
           <h1 className="font-display text-3xl md:text-5xl leading-tight mt-3">{p.name}</h1>
 
-          <div className="flex items-center gap-2 mt-4 text-sm">
-            <span className="flex text-accent">
-              {[...Array(5)].map((_, i) => (
-                <Star
-                  key={i}
-                  className={`w-3.5 h-3.5 ${i < Math.round(p.rating) ? "fill-current" : ""}`}
-                  strokeWidth={1.5}
-                />
-              ))}
-            </span>
-            <span className="text-zinc-500">
-              {p.rating} · {p.reviews} avis
-            </span>
-          </div>
+          {p.trend && (
+            <p className="inline-flex items-center gap-2 label-caps text-accent-dark mt-4 bg-cream px-3 py-2">
+              <Sparkles className="w-3.5 h-3.5" strokeWidth={1.5} /> Tendance · {p.trend}
+            </p>
+          )}
 
           <div className="flex items-center gap-3 mt-6">
             <span className="text-2xl font-medium">{fmt(p.price)}</span>
-            {p.oldPrice && (
-              <span className="line-through text-zinc-400">{fmt(p.oldPrice)}</span>
-            )}
-            {p.oldPrice && (
-              <span className="label-caps bg-accent text-paper px-2 py-1">
-                −{Math.round((1 - p.price / p.oldPrice) * 100)}%
-              </span>
+            {p.oldPrice && <span className="line-through text-zinc-400">{fmt(p.oldPrice)}</span>}
+            {discount && (
+              <span className="label-caps bg-accent text-paper px-2 py-1">−{discount}%</span>
             )}
           </div>
-          {label && !p.oldPrice && <p className="label-caps text-accent mt-2">{label}</p>}
 
           <p className="text-zinc-600 leading-relaxed mt-6 max-w-lg">{p.desc}</p>
 
-          <div className="mt-8">
-            <p className="label-caps mb-3">Couleur</p>
-            <div className="flex gap-2.5">
-              {p.colors.map((c) => (
-                <button
-                  key={c}
-                  onClick={() => setColor(c)}
-                  aria-label={`Couleur ${c}`}
-                  className={`w-9 h-9 rounded-full border-2 transition-all duration-300 ${
-                    color === c
-                      ? "border-accent scale-110"
-                      : "border-zinc-200 hover:border-zinc-400"
-                  }`}
-                  style={{ background: c }}
-                />
-              ))}
+          {p.colors.length > 1 && (
+            <div className="mt-8">
+              <p className="label-caps mb-3">Couleur</p>
+              <div className="flex gap-2.5">
+                {p.colors.map((c) => (
+                  <button
+                    key={c}
+                    onClick={() => setColor(c)}
+                    aria-label={`Couleur ${c}`}
+                    className={`w-9 h-9 rounded-full border-2 transition-all duration-300 ${
+                      color === c ? "border-accent scale-110" : "border-zinc-200 hover:border-zinc-400"
+                    }`}
+                    style={{ background: c }}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
           <div className="mt-8">
             <p className="label-caps mb-3">Taille</p>
             <div className="flex gap-2 flex-wrap">
-              {["XS", "S", "M", "L", "XL"].map((s) => (
+              {p.sizes.map((s) => (
                 <button
                   key={s}
                   onClick={() => setSize(s)}
@@ -149,20 +143,32 @@ export default function ProductPage() {
 
           <div className="flex gap-3 mt-10">
             <Button
-              onClick={() => add(p, size, shownColor)}
+              onClick={() => add(p, size, color)}
               className="flex-1 h-14 py-4 bg-ink text-paper hover:bg-accent transition-colors duration-500"
             >
               <ShoppingBag className="w-4 h-4" strokeWidth={1.5} /> Ajouter au panier
             </Button>
             <Button
               onClick={() => nav("/commande")}
+              aria-label="Acheter maintenant"
               className="h-14 px-6 border border-zinc-300 bg-transparent hover:border-ink"
             >
               <Heart className="w-4 h-4" strokeWidth={1.5} />
             </Button>
           </div>
 
-          <ul className="mt-10 space-y-4 text-sm text-zinc-600 border-t border-zinc-200 pt-8">
+          <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-4 text-sm border-t border-zinc-200 pt-8">
+            <div>
+              <dt className="label-caps text-zinc-400">Matière</dt>
+              <dd className="mt-1.5 text-zinc-700">{p.material}</dd>
+            </div>
+            <div>
+              <dt className="label-caps text-zinc-400">Entretien</dt>
+              <dd className="mt-1.5 text-zinc-700">{p.care}</dd>
+            </div>
+          </dl>
+
+          <ul className="mt-8 space-y-4 text-sm text-zinc-600 border-t border-zinc-200 pt-8">
             <li className="flex gap-3 items-start">
               <Truck className="w-4 h-4 mt-0.5 text-accent shrink-0" strokeWidth={1.5} />
               Livraison 24-72h à Kinshasa et Goma, 5-7 jours en province

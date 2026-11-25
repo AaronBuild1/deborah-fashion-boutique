@@ -122,9 +122,8 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-paper/15">
-        <div className="max-w-[1440px] mx-auto px-5 md:px-10 py-5 flex flex-col sm:flex-row justify-between gap-2 text-[10px] uppercase tracking-[0.22em] text-paper/50">
+        <div className="max-w-[1440px] mx-auto px-5 md:px-10 py-5 text-[10px] uppercase tracking-[0.22em] text-paper/50">
           <span>© 2026 Deborah Fashion — Kinshasa</span>
-          <span>Maquette de démonstration</span>
         </div>
       </div>
     </footer>

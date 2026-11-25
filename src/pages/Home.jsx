@@ -1,21 +1,28 @@
 import { Link } from "react-router-dom";
 import { ChevronRight, Truck, RefreshCw, ShieldCheck } from "lucide-react";
-import { PRODUCTS, fmt } from "../data/products";
+import { PRODUCTS, getProduct, fmt } from "../data/products";
 import { Button, SectionHeading } from "../components/ui";
 import ProductCard from "../components/ProductCard";
 
 const CATEGORY_CARDS = [
-  ["Robes", PRODUCTS[0]],
-  ["Shorts", PRODUCTS[9]],
-  ["Hauts", PRODUCTS[10]],
-  ["Sweats", PRODUCTS[12]],
+  ["Robes", getProduct(1)],
+  ["Shorts", getProduct(14)],
+  ["Hauts", getProduct(10)],
+  ["Sweats", getProduct(22)],
 ];
 
-const POPULAR_IDS = [1, 12, 9, 13, 2, 16, 6, 8];
-const POPULAR = POPULAR_IDS.map((id) => PRODUCTS.find((p) => p.id === id));
+const POPULAR = [1, 5, 6, 8, 16, 19, 22, 24].map((id) => getProduct(id));
+
+const STYLING = {
+  essentials: [10, 13, 1].map((id) => getProduct(id)),
+  soiree: [18, 3, 5].map((id) => getProduct(id)),
+};
 
 export default function Home() {
   const categoryCount = (c) => PRODUCTS.filter((p) => p.category === c).length;
+  const hero = getProduct(3);
+  const trench = getProduct(24);
+  const look = getProduct(19);
 
   return (
     <div>
@@ -69,35 +76,35 @@ export default function Home() {
       <section className="px-5 md:px-10 pb-16 md:pb-24">
         <div className="max-w-[1440px] mx-auto grid md:grid-cols-12 gap-4 md:gap-6">
           <Link
-            to="/produit/8"
+            to={`/produit/${hero.id}`}
             className="md:col-span-8 group relative overflow-hidden bg-cream-soft aspect-[4/5] md:aspect-[16/10]"
           >
             <img
-              src={PRODUCTS[7].img}
-              alt="Robe Soirée Nuit Plissée"
+              src={hero.img}
+              alt={hero.name}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
             />
             <div className="absolute bottom-0 left-0 bg-paper/95 px-6 py-4">
               <p className="label-caps text-zinc-400">Pièce phare</p>
               <p className="font-display text-xl md:text-2xl mt-1 flex items-center gap-2">
-                Robe Soirée Nuit Plissée
+                {hero.name}
                 <ChevronRight className="w-4 h-4 text-accent" />
               </p>
             </div>
           </Link>
           <div className="md:col-span-4 grid gap-4 md:gap-6">
             <Link
-              to="/produit/3"
+              to={`/produit/${trench.id}`}
               className="group relative overflow-hidden bg-cream-soft aspect-[4/5] md:aspect-auto md:flex-1"
             >
               <img
-                src={PRODUCTS[2].img}
-                alt="Trench Beige Long"
+                src={trench.img}
+                alt={trench.name}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
               <div className="absolute bottom-0 left-0 bg-paper/95 px-5 py-3.5">
                 <p className="label-caps text-zinc-400">Saison des pluies</p>
-                <p className="font-display text-lg mt-0.5">Trench Beige Long</p>
+                <p className="font-display text-lg mt-0.5">{trench.name}</p>
               </div>
             </Link>
             <div className="bg-ink text-paper p-8 md:p-10 flex flex-col justify-between aspect-[4/3] md:aspect-auto">
@@ -231,87 +238,61 @@ export default function Home() {
           </div>
           <div className="md:col-span-7">
             <Link
-              to="/produit/7"
+              to={`/produit/${look.id}`}
               className="group relative overflow-hidden bg-cream-soft aspect-[16/10] block"
             >
               <img
-                src={PRODUCTS[6].img}
-                alt="Tailleur Orange Sunrise"
+                src={look.img}
+                alt={look.name}
                 loading="lazy"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
               <div className="absolute bottom-0 left-0 bg-paper/95 px-5 py-3.5">
                 <p className="label-caps text-zinc-400">Look du mois</p>
-                <p className="font-display text-lg mt-0.5">Tailleur Orange Sunrise</p>
+                <p className="font-display text-lg mt-0.5">{look.name}</p>
               </div>
             </Link>
             <div className="grid sm:grid-cols-2 gap-8 md:gap-10 mt-10 md:mt-12">
-              <div>
-                <p className="label-caps text-zinc-400 mb-4">Les essentiels</p>
-                <ul className="divide-y divide-zinc-200 border-y border-zinc-200">
-                  {[PRODUCTS[4], PRODUCTS[5], PRODUCTS[0]].map((p) => (
-                    <li
-                      key={p.id}
-                      className="flex items-center gap-4 py-3.5 text-sm"
+              {[
+                ["Les essentiels", STYLING.essentials],
+                ["Pour les soirées", STYLING.soiree],
+              ].map(([title, list]) => (
+                <div key={title}>
+                  <p className="label-caps text-zinc-400 mb-4">{title}</p>
+                  <ul className="divide-y divide-zinc-200 border-y border-zinc-200">
+                    {list.map((p) => (
+                      <li key={p.id} className="flex items-center gap-4 py-3.5 text-sm">
+                        <Link to={`/produit/${p.id}`} className="shrink-0">
+                          <img
+                            src={p.img}
+                            alt={p.name}
+                            loading="lazy"
+                            className="w-12 h-14 object-cover"
+                          />
+                        </Link>
+                        <Link
+                          to={`/produit/${p.id}`}
+                          className="flex-1 hover:text-accent transition-colors duration-300"
+                        >
+                          {p.name}
+                        </Link>
+                        <span className="text-zinc-500 whitespace-nowrap">
+                          {fmt(p.price)}{" "}
+                          <span className="text-zinc-400">par pièce</span>
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                  {title === "Pour les soirées" && (
+                    <Link
+                      to="/boutique"
+                      className="label-caps text-accent border-b border-accent pb-1 inline-flex items-center gap-1 mt-6"
                     >
-                      <Link to={`/produit/${p.id}`} className="shrink-0">
-                        <img
-                          src={p.img}
-                          alt={p.name}
-                          loading="lazy"
-                          className="w-12 h-14 object-cover"
-                        />
-                      </Link>
-                      <Link
-                        to={`/produit/${p.id}`}
-                        className="flex-1 hover:text-accent transition-colors duration-300"
-                      >
-                        {p.name}
-                      </Link>
-                      <span className="text-zinc-500 whitespace-nowrap">
-                        {fmt(p.price)}{" "}
-                        <span className="text-zinc-400">par pièce</span>
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <p className="label-caps text-zinc-400 mb-4">Pour les soirées</p>
-                <ul className="divide-y divide-zinc-200 border-y border-zinc-200">
-                  {[PRODUCTS[15], PRODUCTS[7], PRODUCTS[11]].map((p) => (
-                    <li
-                      key={p.id}
-                      className="flex items-center gap-4 py-3.5 text-sm"
-                    >
-                      <Link to={`/produit/${p.id}`} className="shrink-0">
-                        <img
-                          src={p.img}
-                          alt={p.name}
-                          loading="lazy"
-                          className="w-12 h-14 object-cover"
-                        />
-                      </Link>
-                      <Link
-                        to={`/produit/${p.id}`}
-                        className="flex-1 hover:text-accent transition-colors duration-300"
-                      >
-                        {p.name}
-                      </Link>
-                      <span className="text-zinc-500 whitespace-nowrap">
-                        {fmt(p.price)}{" "}
-                        <span className="text-zinc-400">par pièce</span>
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  to="/boutique"
-                  className="label-caps text-accent border-b border-accent pb-1 inline-flex items-center gap-1 mt-6"
-                >
-                  Voir toute la collection <ChevronRight className="w-3.5 h-3.5" />
-                </Link>
-              </div>
+                      Voir toute la collection <ChevronRight className="w-3.5 h-3.5" />
+                    </Link>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </div>
