@@ -80,6 +80,27 @@ npm run dev
 npm run build
 ```
 
+## Photos — provenance et crédits
+
+Les visuels actuels sont des **photos libres de droits provenant d'Unsplash** ([licence Unsplash](https://unsplash.com/license)), choisies avec des mannequins noires / d'origine africaine et une ambiance éditoriale moderne, conformément au positionnement de la boutique.
+
+Photographes utilisés :
+
+- **Amani Nation** ([@amani_nation](https://unsplash.com/@amani_nation)), Nairobi
+- **Michael Kyule** ([@madness_leahcim_](https://unsplash.com/@madness_leahcim_)), Nairobi
+- **Good Faces Agency** ([@goodfacesagency](https://unsplash.com/@goodfacesagency))
+- **Shedrack Salami** ([@xtrovarts](https://unsplash.com/@xtrovarts)), Lagos
+- **Dwayne Joe** ([@spliff_dj_joe](https://unsplash.com/@spliff_dj_joe)), Kenya
+- **Atsu Tettey** ([@atsu_tettey](https://unsplash.com/@atsu_tettey)), Tema, Ghana
+
+La liste complète, photo par photo (identifiant Unsplash → photographe), est documentée en tête de [`src/data/products.js`](src/data/products.js).
+
+### Remplacer par les vraies photos de la boutique
+
+La structure est centralisée dans `src/data/products.js` : remplacer la photo d'un produit revient à changer l'identifiant photo dans `img` (photo principale) et `imgs` (galerie de 2 photos), ou à coller directement une URL `images.unsplash.com` / `images.pexels.com`.
+
+> **Recommandation** : photographier les **vrais articles** de la boutique (portrait 3:4, lumière naturelle, fond simple) puis remplacer ces visuels de banque d'images. De vraies photos produit convertissent nettement mieux et rassurent les clientes sur ce qu'elles recevront.
+
 ## Déploiement Vercel
 
 1. Sur [vercel.com](https://vercel.com) : **Add New → Project** et importez ce dépôt GitHub.

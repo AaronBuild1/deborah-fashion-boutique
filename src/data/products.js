@@ -3,10 +3,60 @@ export const IMG = (id, w = 600, h = 800) =>
 
 /*
  * Catalogue Deborah Fashion — MAQUETTE.
- * Toutes les données sont provisoires : prix indicatifs (USD), matières, entretien,
- * disponibilité et photos. À remplacer par les vraies données fournies par la boutique.
- * Les photos sont des visuels provisoires : toute photo avec mannequin devra être
- * remplacée par des photos de mannequins africaines (shooting Deborah).
+ * Toutes les données sont provisoires : prix indicatifs (USD), matières, entretien
+ * et disponibilité. À remplacer par les vraies données fournies par la boutique.
+ *
+ * ---------------------------------------------------------------------------
+ * PHOTOS — PROVENANCE ET CRÉDITS
+ * ---------------------------------------------------------------------------
+ * Toutes les photos sont des visuels libres de droits provenant d'Unsplash
+ * (licence Unsplash https://unsplash.com/license), choisis avec des mannequins
+ * noires / d'origine africaine et une ambiance éditoriale moderne.
+ * URLs construites via IMG() à partir des identifiants photo Unsplash :
+ *
+ * 1645390371590-b2af40ce3fdd — Amani Nation (@amani_nation), Nairobi
+ * 1648190300042-61b2ae14b403 — Amani Nation (@amani_nation), Nairobi
+ * 1649368471572-514b2f7755ac — Amani Nation (@amani_nation), Nairobi
+ * 1593528977592-47f94831186c — Amani Nation (@amani_nation), Nairobi
+ * 1720590283651-150857a19d8c — Amani Nation (@amani_nation), Nairobi
+ * 1623762065223-e4d1e17cd3e6 — Amani Nation (@amani_nation), Nairobi
+ * 1617006267067-ee715033fd69 — Amani Nation (@amani_nation), Nairobi
+ * 1605947921571-968f66b22c86 — Amani Nation (@amani_nation), Nairobi
+ * 1605947919292-7b62afb5e0b8 — Amani Nation (@amani_nation), Nairobi
+ * 1600474356733-0a3094a9b0c3 — Amani Nation (@amani_nation), Nairobi
+ * 1606596556959-5e9d2cf02d33 — Amani Nation (@amani_nation), Nairobi
+ * 1602512214357-84321835eeeb — Amani Nation (@amani_nation), Nairobi
+ * 1598559240084-1606f635879e — Amani Nation (@amani_nation), Nairobi
+ * 1611348440902-6ecc67f7a7f4 — Amani Nation (@amani_nation), Nairobi
+ * 1733555294950-270eb59bff11 — Amani Nation (@amani_nation), Nairobi
+ * 1598559240160-28a25b8bcbd3 — Amani Nation (@amani_nation), Nairobi
+ * 1690918845429-ebe653c94e5a — Amani Nation (@amani_nation), Nairobi
+ * 1690918863741-5454c6083698 — Amani Nation (@amani_nation), Nairobi
+ * 1602794837437-89ab353d5b4a — Amani Nation (@amani_nation), Nairobi
+ * 1593529029635-98f6f19de3f5 — Amani Nation (@amani_nation), Nairobi
+ * 1741275210031-6637c99135a9 — Amani Nation (@amani_nation), Nairobi
+ * 1690361054404-9e126c422331 — Amani Nation (@amani_nation), Nairobi
+ * 1647552054072-d1eaeaf8d9a9 — Amani Nation (@amani_nation), Nairobi
+ * 1632765854612-9b02b6ec2b15 — Good Faces Agency (@goodfacesagency)
+ * 1632765866070-3fadf25d3d5b — Good Faces Agency (@goodfacesagency)
+ * 1781510537033-bcde1aad206b — Michael Kyule (@madness_leahcim_), Nairobi
+ * 1737357126863-c6e6b1fff33d — Michael Kyule (@madness_leahcim_), Nairobi
+ * 1718091708959-938f2f241329 — Michael Kyule (@madness_leahcim_), Nairobi
+ * 1767249615394-c2f36d563a2d — Michael Kyule (@madness_leahcim_), Nairobi
+ * 1708170236295-20ab8fbadcef — Shedrack Salami (@xtrovarts), Lagos
+ * 1707162740897-cf2f057d2a41 — Dwayne Joe (@spliff_dj_joe), Kenya
+ * 1772240520016-e8639030df5c — Atsu Tettey (@atsu_tettey), Tema, Ghana
+ * 1772240520016-3a24feb301e5 — Atsu Tettey (@atsu_tettey), Tema, Ghana
+ *
+ * ---------------------------------------------------------------------------
+ * IMPORTANT — REMPLACEMENT PAR LES VRAIES PHOTOS
+ * ---------------------------------------------------------------------------
+ * Ce sont des visuels provisoires présentant le catalogue. La structure est
+ * centralisée ici : remplacer la photo d'un produit = changer l'identifiant
+ * photo dans `img` et `imgs`.
+ * Recommandation : photographier les VRAIS articles de la boutique puis
+ * remplacer ces URLs — des vraies photos produit convertissent nettement
+ * mieux qu'une banque d'images.
  */
 
 const APPAREL_SIZES = ["XS", "S", "M", "L", "XL", "XXL"];
@@ -15,250 +65,250 @@ const ONE_SIZE = ["Taille unique"];
 export const PRODUCTS = [
   /* ---------- Robes ---------- */
   {
-    id: 1, ref: "DF-001", name: "Robe Midi Imprimée", category: "Robes", price: 58, oldPrice: null,
-    badge: "Best-seller", trend: "Imprimés fleuris",
-    colors: ["#b45309", "#1e1b4b", "#be123c"], sizes: APPAREL_SIZES,
-    material: "Viscose imprimée", care: "Lavage à 30°, ne pas sécher en machine",
-    desc: "Robe midi imprimée, coupe cintrée à la taille et manches légères bouffantes. Une pièce fluide pour la journée comme pour les sorties.",
-    img: IMG("1664151099736-1ac6365a25aa"), imgs: [IMG("1664151099736-1ac6365a25aa"), IMG("1769349661389-0737f39a8507")]
+    id: 1, ref: "DF-001", name: "Robe Longue Azur", category: "Robes", price: 58, oldPrice: null,
+    badge: "Best-seller", trend: "Robes longues fluides",
+    colors: ["#2563eb", "#1e3a8a", "#f8fafc"], sizes: APPAREL_SIZES,
+    material: "Viscose fluide", care: "Lavage à 30°, ne pas sécher en machine",
+    desc: "Robe longue en tissu fluide, manches longues et silhouette allongée. Une pièce qui capte la lumière du jour comme des sorties.",
+    img: IMG("1623762065223-e4d1e17cd3e6"), imgs: [IMG("1623762065223-e4d1e17cd3e6"), IMG("1648190300042-61b2ae14b403")]
   },
   {
-    id: 2, ref: "DF-002", name: "Robe Fluide Longue", category: "Robes", price: 85, oldPrice: null,
+    id: 2, ref: "DF-002", name: "Robe Fluide Solaire", category: "Robes", price: 85, oldPrice: null,
     badge: null, trend: "Robe fluide longue",
-    colors: ["#111827", "#a16207", "#f5efe6"], sizes: APPAREL_SIZES,
-    material: "Crepé fluide", care: "Lavage délicat à froid, séchage à plat",
-    desc: "Robe longue à la coupe écoulée, taille marquée et finitions soignées. La féminité moderne, sans effort.",
-    img: IMG("1567532939604-b6b5b0db2604"), imgs: [IMG("1567532939604-b6b5b0db2604"), IMG("1509967419530-da38b4704bc6")]
+    colors: ["#93c5fd", "#d4b483", "#f5efe6"], sizes: APPAREL_SIZES,
+    material: "Crêpe fluide", care: "Lavage délicat à froid, séchage à plat",
+    desc: "Robe fluide aux tons ensoleillés, à porter avec un chapeau de paille pour un look de vacances instagrammable.",
+    img: IMG("1648190300042-61b2ae14b403"), imgs: [IMG("1648190300042-61b2ae14b403"), IMG("1720590283651-150857a19d8c")]
   },
   {
-    id: 3, ref: "DF-003", name: "Robe Soirée Nuit Plissée", category: "Robes", price: 120, oldPrice: 140,
-    badge: "Édition limitée", trend: "Effet métallique",
-    colors: ["#111827", "#7e22ce"], sizes: APPAREL_SIZES,
-    material: "Polyester plissé", care: "Nettoyage à sec recommandé",
-    desc: "Robe longue dos nu en tissu plissé à l'effet métallique, mémoire de forme. Pensée pour les soirées.",
-    img: IMG("1559172802-f5de3d1ed91d"), imgs: [IMG("1559172802-f5de3d1ed91d"), IMG("1515886657613-9f3515b0c78f")]
+    id: 3, ref: "DF-003", name: "Robe de Soirée Rubis", category: "Robes", price: 120, oldPrice: 140,
+    badge: "Édition limitée", trend: "Robes de soirée",
+    colors: ["#b91c1c", "#0f172a", "#7e22ce"], sizes: APPAREL_SIZES,
+    material: "Crêpe doublé", care: "Nettoyage à sec recommandé",
+    desc: "Robe de soirée sans manches au rouge profond, coupe ajustée et tombé net. Pensée pour les grandes occasions.",
+    img: IMG("1617006267067-ee715033fd69"), imgs: [IMG("1617006267067-ee715033fd69"), IMG("1593528977592-47f94831186c")]
   },
   {
     id: 4, ref: "DF-004", name: "Petite Robe Soleil", category: "Robes", price: 32, oldPrice: null,
-    badge: "Nouveau", trend: "Robe courte d'été",
-    colors: ["#fb7185", "#f59e0b", "#faf9f7"], sizes: APPAREL_SIZES,
-    material: "Crepé de viscose", care: "Lavage à 30°, repassage doux",
-    desc: "Petite robe courte en crépe fluide, bretelles fines et dos ouvert. La pièce idéale pour les soirées chaudes.",
-    img: IMG("1604733674304-82a3bfa353f2"), imgs: [IMG("1604733674304-82a3bfa353f2"), IMG("1500637883394-da696c7d2ed2")]
+    badge: "Nouveau", trend: "Robe d'été",
+    colors: ["#eab308", "#fde68a", "#faf9f7"], sizes: APPAREL_SIZES,
+    material: "Crêpe de viscose", care: "Lavage à 30°, repassage doux",
+    desc: "Petite robe jaune en crêpe fluide, à fleurs dans les cheveux. La pièce idéale pour les journées chaudes et les photos d'été.",
+    img: IMG("1720590283651-150857a19d8c"), imgs: [IMG("1720590283651-150857a19d8c"), IMG("1648190300042-61b2ae14b403")]
   },
   {
-    id: 5, ref: "DF-005", name: "Robe de Soirée Sequins", category: "Robes", price: 110, oldPrice: null,
-    badge: "Nouveau", trend: "Sequins de soirée",
-    colors: ["#111827", "#be123c", "#d6c5a8"], sizes: APPAREL_SIZES,
-    material: "Maille brisée à sequins", care: "Nettoyage à sec uniquement",
-    desc: "Robe moulante à sequins, col bateau et fermeture invisible. Un statement pour les soirées.",
-    img: IMG("1523824921871-d6f1a15151f1"), imgs: [IMG("1523824921871-d6f1a15151f1"), IMG("1604733674304-82a3bfa353f2")]
+    id: 5, ref: "DF-005", name: "Robe de Soirée Noire Élégance", category: "Robes", price: 110, oldPrice: null,
+    badge: "Nouveau", trend: "Soirées et événements",
+    colors: ["#0a0a0a", "#1f2937", "#d6c5a8"], sizes: APPAREL_SIZES,
+    material: "Crêpe doublé", care: "Nettoyage à sec uniquement",
+    desc: "Tenue de soirée toute en noir, silhouette élancée et allure tapis rouge. Un statement intemporel pour les nuits d'exception.",
+    img: IMG("1593528977592-47f94831186c"), imgs: [IMG("1593528977592-47f94831186c"), IMG("1617006267067-ee715033fd69")]
   },
 
   /* ---------- Jupes ---------- */
   {
-    id: 6, ref: "DF-006", name: "Jupe Longue en Maille", category: "Jupes", price: 48, oldPrice: null,
-    badge: "Tendance", trend: "Jupe longue en maille",
-    colors: ["#292524", "#78716c", "#d6c5a8"], sizes: APPAREL_SIZES,
-    material: "Maille côtelée (viscose mélangée)", care: "Lavage à froid, séchage à plat",
-    desc: "Jupe longue en maille à la taille élastiquée et au tombant souple. La pièce tendance de la saison, à porter avec un haut ajusté.",
-    img: IMG("1596626417050-39c7f6ddd2c9"), imgs: [IMG("1596626417050-39c7f6ddd2c9"), IMG("1552710307-537199cd41c0")]
+    id: 6, ref: "DF-006", name: "Jupe Rayée N&B", category: "Jupes", price: 48, oldPrice: null,
+    badge: "Tendance", trend: "Jupes longues",
+    colors: ["#0a0a0a", "#f5f5f4", "#78716c"], sizes: APPAREL_SIZES,
+    material: "Coton mélangé", care: "Lavage à froid, séchage à plat",
+    desc: "Jupe longue rayée noir et blanc, taille confort et tombé fluide. Se marie à un chemisier blanc pour un look éditorial.",
+    img: IMG("1605947921571-968f66b22c86"), imgs: [IMG("1605947921571-968f66b22c86"), IMG("1605947919292-7b62afb5e0b8")]
   },
   {
-    id: 7, ref: "DF-007", name: "Jupe Longue Portefeuille", category: "Jupes", price: 42, oldPrice: 52,
+    id: 7, ref: "DF-007", name: "Jupe Portefeuille Solaire", category: "Jupes", price: 42, oldPrice: 52,
     badge: "Best-seller", trend: "Jupe longue",
-    colors: ["#292524", "#b45309", "#166534"], sizes: APPAREL_SIZES,
+    colors: ["#f5f5f4", "#d97706", "#166534"], sizes: APPAREL_SIZES,
     material: "Viscose", care: "Lavage à 30°",
-    desc: "Jupe longue portefeuille, taille élastiquée confort et fente latérale. Du bureau au dîné.",
-    img: IMG("1552710307-537199cd41c0"), imgs: [IMG("1552710307-537199cd41c0"), IMG("1596626417050-39c7f6ddd2c9")]
+    desc: "Jupe longue à rayures ensoleillées, taille élastiquée confort et mouvement dans la marche. Du brunch au dîner.",
+    img: IMG("1781510537033-bcde1aad206b"), imgs: [IMG("1781510537033-bcde1aad206b"), IMG("1647552054072-d1eaeaf8d9a9")]
   },
 
   /* ---------- Pantalons ---------- */
   {
-    id: 8, ref: "DF-008", name: "Palazzo Ample", category: "Pantalons", price: 55, oldPrice: null,
-    badge: "Tendance", trend: "Palazzo, pantalon fluide",
-    colors: ["#111827", "#d6c5a8", "#78716c"], sizes: APPAREL_SIZES,
-    material: "Crépe fluide", care: "Lavage à 30°, repassage doux",
-    desc: "Pantalon palazzo taille haute, jambe ample et ligne aérienne. Il allonge la silhouette et se marie aux hauts courts comme aux blouses.",
-    img: IMG("1509631179647-0177331693ae"), imgs: [IMG("1509631179647-0177331693ae"), IMG("1581044777550-4cfa60707c03")]
+    id: 8, ref: "DF-008", name: "Pantalon Jaune Sunlight", category: "Pantalons", price: 55, oldPrice: null,
+    badge: "Tendance", trend: "Pantalon fluide",
+    colors: ["#facc15", "#1e3a8a", "#f8fafc"], sizes: APPAREL_SIZES,
+    material: "Crêpe fluide", care: "Lavage à 30°, repassage doux",
+    desc: "Pantalon fluide jaune à taille haute, à porter avec un manteau bleu ou un top ajusté. La pièce statement de la saison.",
+    img: IMG("1690918845429-ebe653c94e5a"), imgs: [IMG("1690918845429-ebe653c94e5a"), IMG("1690918863741-5454c6083698")]
   },
   {
-    id: 9, ref: "DF-009", name: "Pantalon Taille Haute Fluide", category: "Pantalons", price: 50, oldPrice: null,
+    id: 9, ref: "DF-009", name: "Pantalon Fluide Framboise", category: "Pantalons", price: 50, oldPrice: null,
     badge: null, trend: "Pantalon taille haute",
-    colors: ["#1e1b4b", "#f5efe6", "#be123c"], sizes: APPAREL_SIZES,
+    colors: ["#dc2626", "#eab308", "#111827"], sizes: APPAREL_SIZES,
     material: "Viscose mélangée", care: "Lavage à 30°",
-    desc: "Pantalon fluide à taille haute et pinces, coupe droite. Une base polyvalente pour le bureau.",
-    img: IMG("1524504388940-b1c1722653e1"), imgs: [IMG("1524504388940-b1c1722653e1"), IMG("1622445275576-721325763afe")]
+    desc: "Pantalon fluide rouge framboise, taille haute et jambe dégagée. Une base audacieuse qui réveille toutes les tenues.",
+    img: IMG("1690918863741-5454c6083698"), imgs: [IMG("1690918863741-5454c6083698"), IMG("1690918845429-ebe653c94e5a")]
   },
 
   /* ---------- Hauts ---------- */
   {
-    id: 10, ref: "DF-010", name: "Chemisier Soie Étoile", category: "Hauts", price: 38, oldPrice: null,
-    badge: null, trend: "Satin et fluidité",
-    colors: ["#f8fafc", "#c084fc", "#334155"], sizes: APPAREL_SIZES,
-    material: "Soie mélangée", care: "Lavage délicat à froid",
-    desc: "Chemisier fluide en soie mélangée, boutons nacrés et coupe légèrement oversize.",
-    img: IMG("1589156280159-27698a70f29e"), imgs: [IMG("1589156280159-27698a70f29e"), IMG("1517841905240-472988babdf9")]
+    id: 10, ref: "DF-010", name: "Chemisier Fleuri Vibrant", category: "Hauts", price: 38, oldPrice: null,
+    badge: null, trend: "Fleurs et couleurs",
+    colors: ["#eab308", "#dc2626", "#f8fafc"], sizes: APPAREL_SIZES,
+    material: "Coton imprimé", care: "Lavage délicat à froid",
+    desc: "Chemise manches longues à imprimé fleuri jaune et rouge. Lumière naturelle garantie sur le fil des instagrams.",
+    img: IMG("1605947919292-7b62afb5e0b8"), imgs: [IMG("1605947919292-7b62afb5e0b8"), IMG("1600474356733-0a3094a9b0c3")]
   },
   {
-    id: 11, ref: "DF-011", name: "Crop Top Étoile", category: "Hauts", price: 20, oldPrice: null,
-    badge: null, trend: "Crop top",
-    colors: ["#faf9f7", "#0a0a0a", "#ec4899"], sizes: APPAREL_SIZES,
-    material: "Côtel stretch", care: "Lavage à 30°",
-    desc: "Crop top côtelé à encolure carrée et tissu stretch confort. Se porte avec un short satin ou un jean taille haute.",
-    img: IMG("1548142813-c348350df52b"), imgs: [IMG("1548142813-c348350df52b"), IMG("1517841905240-472988babdf9")]
+    id: 11, ref: "DF-011", name: "Débardeur Orange Pop", category: "Hauts", price: 20, oldPrice: null,
+    badge: null, trend: "Tank top",
+    colors: ["#f97316", "#0a0a0a", "#f8fafc"], sizes: APPAREL_SIZES,
+    material: "Coton stretch", care: "Lavage à 30°",
+    desc: "Débardeur orange vif, coupe près du corps. Se porte avec un jean taille haute et des lunettes de soleil pour un look influenceuse.",
+    img: IMG("1606596556959-5e9d2cf02d33"), imgs: [IMG("1606596556959-5e9d2cf02d33"), IMG("1602512214357-84321835eeeb")]
   },
   {
-    id: 12, ref: "DF-012", name: "Polo Femme Structuré", category: "Hauts", price: 30, oldPrice: null,
-    badge: null, trend: "Polo féminin repensé",
-    colors: ["#faf9f7", "#1e1b4b", "#d97706"], sizes: APPAREL_SIZES,
-    material: "Coton piqué", care: "Lavage à 30°",
-    desc: "Polo à coupe féminine, col structuré et fermeture bouée à deux boutons. Un classique revisité.",
-    img: IMG("1517841905240-472988babdf9"), imgs: [IMG("1517841905240-472988babdf9"), IMG("1548142813-c348350df52b")]
+    id: 12, ref: "DF-012", name: "Chemise Pastel Tricolore", category: "Hauts", price: 30, oldPrice: null,
+    badge: null, trend: "Chemises girly",
+    colors: ["#f9a8d4", "#60a5fa", "#fde047"], sizes: APPAREL_SIZES,
+    material: "Coton", care: "Lavage à 30°",
+    desc: "Chemise manches longues en tons pastel rose, bleu et jaune. Une pièce qui illumine toutes les garde-robes.",
+    img: IMG("1611348440902-6ecc67f7a7f4"), imgs: [IMG("1611348440902-6ecc67f7a7f4"), IMG("1598559240084-1606f635879e")]
   },
   {
-    id: 13, ref: "DF-013", name: "Haut en Satin", category: "Hauts", price: 34, oldPrice: null,
-    badge: null, trend: "Satin",
-    colors: ["#111827", "#7c3aed", "#d6c5a8"], sizes: APPAREL_SIZES,
-    material: "Satin polyester", care: "Lavage délicat à froid",
-    desc: "Haut en satin à bretelles fines et encolure drapée. Se superpose sous une veste ou se porte seul.",
-    img: IMG("1500637883394-da696c7d2ed2"), imgs: [IMG("1500637883394-da696c7d2ed2"), IMG("1523824921871-d6f1a15151f1")]
+    id: 13, ref: "DF-013", name: "Top Rose Poudré", category: "Hauts", price: 34, oldPrice: null,
+    badge: null, trend: "Tops et blouses",
+    colors: ["#f472b6", "#fb7185", "#faf9f7"], sizes: APPAREL_SIZES,
+    material: "Coton doux", care: "Lavage délicat à froid",
+    desc: "Top rose poudré à la coupe douce. Se superpose sous une veste ou se porte seul, avec un sourire.",
+    img: IMG("1733555294950-270eb59bff11"), imgs: [IMG("1733555294950-270eb59bff11"), IMG("1741275210031-6637c99135a9")]
   },
 
   /* ---------- Shorts ---------- */
   {
-    id: 14, ref: "DF-014", name: "Short Satin Nuit", category: "Shorts", price: 24, oldPrice: null,
-    badge: null, trend: "Satin",
-    colors: ["#111827", "#7e22ce", "#be123c"], sizes: APPAREL_SIZES,
-    material: "Satin polyester", care: "Lavage délicat à froid",
-    desc: "Short taille haute en satin, coupe ajustée et tombé brillant. À marier au Crop Top Étoile pour une tenue de sortie.",
-    img: IMG("1531123897727-8f129e1688ce"), imgs: [IMG("1531123897727-8f129e1688ce"), IMG("1515886657613-9f3515b0c78f")]
+    id: 14, ref: "DF-014", name: "Short en Jean Noir", category: "Shorts", price: 24, oldPrice: null,
+    badge: null, trend: "Shorts de saison",
+    colors: ["#171717", "#b91c1c", "#eab308"], sizes: APPAREL_SIZES,
+    material: "Denim", care: "Lavage à 30°",
+    desc: "Short en denim noir taille haute, se marie à une chemise à carreaux pour un look streetwear chic.",
+    img: IMG("1598559240160-28a25b8bcbd3"), imgs: [IMG("1598559240160-28a25b8bcbd3"), IMG("1598559240084-1606f635879e")]
   },
   {
-    id: 15, ref: "DF-015", name: "Short Tailleur Taille Haute", category: "Shorts", price: 36, oldPrice: null,
-    badge: "Nouveau", trend: "Short tailleur",
-    colors: ["#171717", "#d6c5a8", "#78716c"], sizes: APPAREL_SIZES,
-    material: "Crépe structuré", care: "Lavage à 30° ou nettoyage à sec",
-    desc: "Short tailleur taille haute, pli marqué et ceinture à passants. Le short de la saison, à porter avec une veste oversize.",
-    img: IMG("1581044777550-4cfa60707c03"), imgs: [IMG("1581044777550-4cfa60707c03"), IMG("1509631179647-0177331693ae")]
+    id: 15, ref: "DF-015", name: "Tenue Streetwear Urbaine", category: "Ensembles", price: 36, oldPrice: null,
+    badge: "Nouveau", trend: "Streetwear chic",
+    colors: ["#171717", "#92400e", "#78716c"], sizes: APPAREL_SIZES,
+    material: "Coton mélangé", care: "Lavage à 30° ou nettoyage à sec",
+    desc: "Look streetwear urbain posé au sol comme en éditorial. La tenue influenceuse qui fait la différence en photo.",
+    img: IMG("1708170236295-20ab8fbadcef"), imgs: [IMG("1708170236295-20ab8fbadcef"), IMG("1737357126863-c6e6b1fff33d")]
   },
 
   /* ---------- Ensembles ---------- */
   {
-    id: 16, ref: "DF-016", name: "Ensemble Satin Luna", category: "Ensembles", price: 68, oldPrice: null,
-    badge: null, trend: "Satin et fluidité",
-    colors: ["#111827", "#7c3aed", "#d97706"], sizes: APPAREL_SIZES,
-    material: "Satin fluide", care: "Lavage délicat à froid",
-    desc: "Ensemble deux pièces en satin : chemisier à col montant et pantalon large taille haute. Parfait pour les soirées.",
-    img: IMG("1524504388940-b1c1722653e1"), imgs: [IMG("1524504388940-b1c1722653e1"), IMG("1589156280159-27698a70f29e")]
+    id: 16, ref: "DF-016", name: "Ensemble Éditorial Couleurs", category: "Ensembles", price: 68, oldPrice: null,
+    badge: null, trend: "Pièces de couleurs",
+    colors: ["#0ea5e9", "#f97316", "#111827"], sizes: APPAREL_SIZES,
+    material: "Coton mélangé", care: "Lavage délicat à froid",
+    desc: "Ensemble en couleurs franches pensé comme un éditorial de mode. Face au mur coloré, la tenue parle d'elle-même.",
+    img: IMG("1645390371590-b2af40ce3fdd"), imgs: [IMG("1645390371590-b2af40ce3fdd"), IMG("1647552054072-d1eaeaf8d9a9")]
   },
   {
-    id: 17, ref: "DF-017", name: "Ensemble Deux-Pièces Taille Haute", category: "Ensembles", price: 66, oldPrice: null,
+    id: 17, ref: "DF-017", name: "Ensemble Deux-Pièces Studio", category: "Ensembles", price: 66, oldPrice: null,
     badge: "Tendance", trend: "Deux-pièces taille haute",
     colors: ["#111827", "#f8fafc", "#b91c1c"], sizes: APPAREL_SIZES,
     material: "Viscose mélangée", care: "Lavage à 30°",
-    desc: "Top court et jupe ou pantalon taille haute, coupe nette. Le duo qui allonge la silhouette.",
-    img: IMG("1708533643647-987a66a2cc00"), imgs: [IMG("1708533643647-987a66a2cc00"), IMG("1555991638-aaa071fa6f58")]
+    desc: "Duo deux-pièces à la coupe nette, capturé en studio. Le genre d'ensemble qui allonge la silhouette.",
+    img: IMG("1632765854612-9b02b6ec2b15"), imgs: [IMG("1632765854612-9b02b6ec2b15"), IMG("1632765866070-3fadf25d3d5b")]
   },
   {
-    id: 18, ref: "DF-018", name: "Ensemble Éclat Soirée", category: "Ensembles", price: 58, oldPrice: 70,
+    id: 18, ref: "DF-018", name: "Ensemble Glam Studio", category: "Ensembles", price: 58, oldPrice: 70,
     badge: null, trend: "Pièces de soirée",
-    colors: ["#be123c", "#111827", "#c084fc"], sizes: APPAREL_SIZES,
-    material: "Satin et finitions scintillantes", care: "Nettoyage à sec recommandé",
-    desc: "Top drapé et jupe satin fuselée, finitions scintillantes. Confortable et sophistiqué pour les soirées.",
-    img: IMG("1500637883394-da696c7d2ed2"), imgs: [IMG("1500637883394-da696c7d2ed2"), IMG("1523824921871-d6f1a15151f1")]
+    colors: ["#111827", "#c084fc", "#f8fafc"], sizes: APPAREL_SIZES,
+    material: "Satin et finitions soignées", care: "Nettoyage à sec recommandé",
+    desc: "Ensemble glamour aux allures d'afterwork chic. Poésie de studio, élan de soirée.",
+    img: IMG("1632765866070-3fadf25d3d5b"), imgs: [IMG("1632765866070-3fadf25d3d5b"), IMG("1632765854612-9b02b6ec2b15")]
   },
 
   /* ---------- Blazers & Tailleurs ---------- */
   {
-    id: 19, ref: "DF-019", name: "Tailleur Orange Sunrise", category: "Blazers & Tailleurs", price: 78, oldPrice: null,
-    badge: "Nouveau", trend: "Tailoring fluide",
-    colors: ["#ea580c", "#171717", "#fbbf24"], sizes: APPAREL_SIZES,
+    id: 19, ref: "DF-019", name: "Veste Bicolore Soleil", category: "Blazers & Tailleurs", price: 78, oldPrice: null,
+    badge: "Nouveau", trend: "Vestes structurées",
+    colors: ["#eab308", "#0a0a0a", "#fbbf24"], sizes: APPAREL_SIZES,
     material: "Polyester mélangé", care: "Nettoyage à sec recommandé",
-    desc: "Blazer et pantalon cigarette, épaules structurées et doublure imprimée. Le look power de la saison.",
-    img: IMG("1581044777550-4cfa60707c03"), imgs: [IMG("1581044777550-4cfa60707c03"), IMG("1509631179647-0177331693ae")]
+    desc: "Veste bicolore jaune et noir, épaules structurées et lunettes de soleil obligatoires. Le look power de la saison.",
+    img: IMG("1602794837437-89ab353d5b4a"), imgs: [IMG("1602794837437-89ab353d5b4a"), IMG("1649368471572-514b2f7755ac")]
   },
   {
-    id: 20, ref: "DF-020", name: "Blazer Oversize", category: "Blazers & Tailleurs", price: 65, oldPrice: null,
-    badge: "Tendance", trend: "Blazer oversize",
-    colors: ["#171717", "#d6c5a8", "#78716c"], sizes: APPAREL_SIZES,
-    material: "Maille de laine mélangée", care: "Lavage à froid, séchage à plat",
-    desc: "Blazer oversize à épaules tombantes, boutonnage simple et poches plaquées. Se porte ouvert sur une robe ou fermé sur un jean.",
-    img: IMG("1622445275576-721325763afe"), imgs: [IMG("1622445275576-721325763afe"), IMG("1531123897727-8f129e1688ce")]
+    id: 20, ref: "DF-020", name: "Blazer Ornementé Chic", category: "Blazers & Tailleurs", price: 65, oldPrice: null,
+    badge: "Tendance", trend: "Blazers",
+    colors: ["#111827", "#c9a227", "#78716c"], sizes: APPAREL_SIZES,
+    material: "Laine mélangée ornée", care: "Nettoyage à sec",
+    desc: "Blazer ornementé porté sur cheveux tressés, boutonnage simple et présence immédiate. Se porte fermé comme un top.",
+    img: IMG("1767249615394-c2f36d563a2d"), imgs: [IMG("1767249615394-c2f36d563a2d"), IMG("1593528977592-47f94831186c")]
   },
 
   /* ---------- Mailles ---------- */
   {
-    id: 21, ref: "DF-021", name: "Pull Losanges", category: "Mailles", price: 42, oldPrice: null,
-    badge: null, trend: "Maille losanges",
-    colors: ["#f5efe6", "#1e1b4b", "#a16207"], sizes: APPAREL_SIZES,
-    material: "Maille acrylique mélangée", care: "Lavage à froid, séchage à plat",
-    desc: "Pull en maille jacquard à motif losanges, col rond et coupe confortable. Le pièce chaude de la saison.",
-    img: IMG("1555991638-aaa071fa6f58"), imgs: [IMG("1555991638-aaa071fa6f58"), IMG("1768212565426-58b089b6386d")]
+    id: 21, ref: "DF-021", name: "Pull Cocooning Nature", category: "Mailles", price: 42, oldPrice: null,
+    badge: null, trend: "Maille douce",
+    colors: ["#57534e", "#a8a29e", "#f5efe6"], sizes: APPAREL_SIZES,
+    material: "Maille douce mélangée", care: "Lavage à froid, séchage à plat",
+    desc: "Pull doux à porter au soleil, sur une chaise en bois ou en terrasse. La maille cocooning de la saison.",
+    img: IMG("1718091708959-938f2f241329"), imgs: [IMG("1718091708959-938f2f241329"), IMG("1593529029635-98f6f19de3f5")]
   },
 
   /* ---------- Sweats ---------- */
   {
-    id: 22, ref: "DF-022", name: "Sweat Court Oversize", category: "Sweats", price: 32, oldPrice: null,
+    id: 22, ref: "DF-022", name: "Veste Zippée Bubble", category: "Sweats", price: 32, oldPrice: null,
     badge: "Nouveau", trend: "Streetwear féminin",
-    colors: ["#faf9f7", "#0a0a0a", "#ea580c"], sizes: APPAREL_SIZES,
+    colors: ["#3b82f6", "#f8fafc", "#0a0a0a"], sizes: APPAREL_SIZES,
     material: "Molleton coton", care: "Lavage à 30°, séchage à l'air",
-    desc: "Sweat court oversize en molleton doux, à porter sur un short satin ou un jean. L'esprit streetwear féminin.",
-    img: IMG("1708533643647-987a66a2cc00"), imgs: [IMG("1708533643647-987a66a2cc00"), IMG("1555991638-aaa071fa6f58")]
+    desc: "Veste zippée bicolore molleton, esprit streetwear et coupe réconfortante. À porter ouverte sur un top clair.",
+    img: IMG("1593529029635-98f6f19de3f5"), imgs: [IMG("1593529029635-98f6f19de3f5"), IMG("1707162740897-cf2f057d2a41")]
   },
   {
-    id: 23, ref: "DF-023", name: "Ensemble Lounge Sweat", category: "Sweats", price: 52, oldPrice: null,
+    id: 23, ref: "DF-023", name: "Ensemble Lounge Confort", category: "Sweats", price: 52, oldPrice: null,
     badge: null, trend: "Ensemble coordonné",
-    colors: ["#111827", "#b91c1c", "#a16207"], sizes: APPAREL_SIZES,
+    colors: ["#78716c", "#292524", "#a16207"], sizes: APPAREL_SIZES,
     material: "Molleton coton", care: "Lavage à 30°",
-    desc: "Duo sweat court + short taille haute, coupe relaxée et poches profondes. Trajets en ville ou soirée chill.",
-    img: IMG("1769349661389-0737f39a8507"), imgs: [IMG("1769349661389-0737f39a8507"), IMG("1555991638-aaa071fa6f58")]
+    desc: "Duo lounge confortable, sourire naturel inclus. Trajets en ville ou soirée chill.",
+    img: IMG("1741275210031-6637c99135a9"), imgs: [IMG("1741275210031-6637c99135a9"), IMG("1733555294950-270eb59bff11")]
   },
 
   /* ---------- Manteaux ---------- */
   {
-    id: 24, ref: "DF-024", name: "Trench Beige Long", category: "Manteaux", price: 89, oldPrice: 105,
+    id: 24, ref: "DF-024", name: "Trench & Chapeau Élégance", category: "Manteaux", price: 89, oldPrice: 105,
     badge: null, trend: "Trench",
-    colors: ["#d6c5a8", "#78716c"], sizes: APPAREL_SIZES,
-    material: "Coton déperlant", care: "Nettoyage à sec recommandé",
-    desc: "Trench long ceinturé, tissu déperlant léger et doublure satinée. L'indispensable de la saison des pluies.",
-    img: IMG("1622445275576-721325763afe"), imgs: [IMG("1622445275576-721325763afe"), IMG("1531123897727-8f129e1688ce")]
+    colors: ["#292524", "#0a0a0a", "#d6c5a8"], sizes: APPAREL_SIZES,
+    material: "Coton mélangé", care: "Nettoyage à sec recommandé",
+    desc: "Trench porté sur chapeau structuré, allure d'éditorial d'automne. L'indispensable de la mi-saison.",
+    img: IMG("1690361054404-9e126c422331"), imgs: [IMG("1690361054404-9e126c422331"), IMG("1649368471572-514b2f7755ac")]
   },
   {
-    id: 25, ref: "DF-025", name: "Manteau Long en Laine", category: "Manteaux", price: 120, oldPrice: null,
-    badge: "Nouveau", trend: "Manteau long",
-    colors: ["#171717", "#78716c", "#d6c5a8"], sizes: APPAREL_SIZES,
-    material: "Laine mélangée", care: "Nettoyage à sec recommandé",
-    desc: "Manteau long boutonnage croisé, col officier et coupe ample. Une pièce d'hiver qui structure la silhouette.",
-    img: IMG("1531123897727-8f129e1688ce"), imgs: [IMG("1531123897727-8f129e1688ce"), IMG("1622445275576-721325763afe")]
+    id: 25, ref: "DF-025", name: "Manteau Cuir Camel", category: "Manteaux", price: 120, oldPrice: null,
+    badge: "Nouveau", trend: "Manteaux",
+    colors: ["#92400e", "#78350f", "#d6c5a8"], sizes: APPAREL_SIZES,
+    material: "Cuir synthétique", care: "Nettoyage spécialiste du cuir",
+    desc: "Veste longue en cuir camel, coupe street et lunettes de soleil. Une pièce qui structure la silhouette.",
+    img: IMG("1649368471572-514b2f7755ac"), imgs: [IMG("1649368471572-514b2f7755ac"), IMG("1602794837437-89ab353d5b4a")]
   },
 
-  /* ---------- Combinaisons ---------- */
+  /* ---------- Ensembles (éditorial) ---------- */
   {
-    id: 26, ref: "DF-026", name: "Combinaison Braise", category: "Combinaisons", price: 54, oldPrice: null,
-    badge: "Nouveau", trend: "Combinaison",
-    colors: ["#b91c1c", "#0f172a", "#a16207"], sizes: APPAREL_SIZES,
-    material: "Crépe fluide", care: "Lavage à 30°, repassage doux",
-    desc: "Combinaison courte à bretelles réglables, décolleté carré et poche latérale. Élégante du bureau au dîné.",
-    img: IMG("1717064153056-84b0e7c8bf15"), imgs: [IMG("1717064153056-84b0e7c8bf15"), IMG("1509967419530-da38b4704bc6")]
+    id: 26, ref: "DF-026", name: "Look Éditorial Afro-Chic", category: "Ensembles", price: 54, oldPrice: null,
+    badge: "Nouveau", trend: "Looks d'exception",
+    colors: ["#171717", "#f59e0b", "#0f172a"], sizes: APPAREL_SIZES,
+    material: "Coton mélangé", care: "Lavage à 30°, repassage doux",
+    desc: "Look éditorial afro-chic, pose affirmée et cheveux au vent. Le style qui fait le charisme du fil instagram.",
+    img: IMG("1707162740897-cf2f057d2a41"), imgs: [IMG("1707162740897-cf2f057d2a41"), IMG("1708170236295-20ab8fbadcef")]
   },
 
   /* ---------- Accessoires ---------- */
   {
-    id: 27, ref: "DF-027", name: "Collier Or Ras-de-cou", category: "Accessoires", price: 22, oldPrice: null,
-    badge: null, trend: "Bijoux or",
-    colors: ["#c9a227"], sizes: ONE_SIZE,
-    material: "Plaqué or", care: "Éviter l'eau et les parfums",
-    desc: "Collier ras-de-cou à maillons fins, plaqué or. Une touche dorée pour toutes les tenues.",
-    img: IMG("1515886657613-9f3515b0c78f"), imgs: [IMG("1515886657613-9f3515b0c78f"), IMG("1604733674304-82a3bfa353f2")]
+    id: 27, ref: "DF-027", name: "Bandana Nomade", category: "Accessoires", price: 22, oldPrice: null,
+    badge: null, trend: "Accessoires cheveux",
+    colors: ["#ea580c", "#171717", "#c9a227"], sizes: ONE_SIZE,
+    material: "Coton imprimé", care: "Lavage à la main",
+    desc: "Bandana à porter sur les cheveux tressés, touche finale d'un look de route. Taille unique.",
+    img: IMG("1772240520016-e8639030df5c"), imgs: [IMG("1772240520016-e8639030df5c"), IMG("1772240520016-3a24feb301e5")]
   },
   {
-    id: 28, ref: "DF-028", name: "Pochette Satin", category: "Accessoires", price: 26, oldPrice: null,
-    badge: null, trend: "Pochette de soirée",
-    colors: ["#111827", "#be123c", "#d6c5a8"], sizes: ONE_SIZE,
-    material: "Satin", care: "Nettoyage délicat à sec",
-    desc: "Pochette en satin avec fermoir métallique et chaîne amovible. Pour les soirées.",
-    img: IMG("1596626417050-39c7f6ddd2c9"), imgs: [IMG("1596626417050-39c7f6ddd2c9"), IMG("1500637883394-da696c7d2ed2")]
+    id: 28, ref: "DF-028", name: "Chapeau Fétiche Soleil", category: "Accessoires", price: 26, oldPrice: null,
+    badge: null, trend: "Chapeaux",
+    colors: ["#eab308", "#d6c5a8", "#78716c"], sizes: ONE_SIZE,
+    material: "Paille", care: "Nettoyage à sec délicat",
+    desc: "Chapeau fétiche en paille, idéal pour un édito au soleil. La pièce qui signe une tenue d'été. Taille unique.",
+    img: IMG("1647552054072-d1eaeaf8d9a9"), imgs: [IMG("1647552054072-d1eaeaf8d9a9"), IMG("1781510537033-bcde1aad206b")]
   },
 ];
 
