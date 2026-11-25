@@ -11,24 +11,24 @@ export default function About() {
       </h1>
       <div className="grid md:grid-cols-12 gap-8 md:gap-16 mt-10 md:mt-14">
         <div className="md:col-span-7">
-          <div className="overflow-hidden bg-zinc-100 aspect-[4/3]">
+          <div className="overflow-hidden bg-cream-soft aspect-[4/3]">
             <img
               src={IMG("1552710307-537199cd41c0", 1000, 750)}
-              alt="Atelier Deborah Fashion à Kinshasa"
+              alt="Pièces de la collection Deborah Fashion"
               className="w-full h-full object-cover"
             />
           </div>
-          <p className="label-caps text-zinc-400 mt-3">Atelier — Kinshasa, RDC</p>
+          <p className="label-caps text-zinc-400 mt-3">Collection — Kinshasa, RDC</p>
         </div>
         <div className="md:col-span-5">
           <p className="text-lg text-zinc-700 leading-relaxed">
             Basée à Kinshasa, Deborah Fashion habille la femme moderne qui veut
-            se sentir élégante, confiante et unique.
+            se sentir élégante, confiante et au fait des tendances.
           </p>
           <p className="text-zinc-600 leading-relaxed mt-6">
-            Maison de prêt-à-porter et showroom : chaque pièce est sélectionnée
-            ou confectionnée avec des tissus authentiques — wax, bogolan,
-            satin — et des ateliers partenaires kinoises. De la pièce du
+            Maison de prêt-à-porter féminin, nous sélectionnons des pièces
+            issues de grandes marques internationales, celles que l'on retrouve
+            sur les profils des influenceuses mode d'aujourd'hui. De la pièce du
             quotidien à la tenue de soirée, notre vestiaire est pensé pour être
             porté, aimé et réinventé saison après saison.
           </p>

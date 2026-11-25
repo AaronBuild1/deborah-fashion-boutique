@@ -26,15 +26,15 @@ export default function Home() {
           <h1 className="mt-6 md:mt-8 font-display font-bold uppercase leading-[0.95] tracking-tight text-[clamp(2.3rem,9.6vw,9rem)]">
             L'élégance
             <br />
-            <span className="italic font-medium text-accent">africaine</span>
+            <span className="italic font-medium text-accent">internationale</span>
             <br />
-            contemporaine.
+            au féminin.
           </h1>
           <div className="mt-10 md:mt-14 grid md:grid-cols-12 gap-6 items-end">
             <p className="md:col-span-5 text-zinc-600 leading-relaxed max-w-md">
-              Robes, ensembles et pièces signature cousus avec soin dans nos
-              ateliers de Kinshasa. Prêt-à-porter femme, livré partout en RDC
-              et payé en dollars ou mobile money.
+              Une sélection de prêt-à-porter féminin issu de grandes marques
+              internationales, choisi pour la femme qui suit les tendances.
+              Livré à Kinshasa et partout en RDC.
             </p>
             <div className="md:col-span-7 flex flex-wrap items-center gap-x-8 gap-y-4 md:justify-end">
               <Button
@@ -70,17 +70,17 @@ export default function Home() {
         <div className="max-w-[1440px] mx-auto grid md:grid-cols-12 gap-4 md:gap-6">
           <Link
             to="/produit/8"
-            className="md:col-span-8 group relative overflow-hidden bg-zinc-100 aspect-[4/5] md:aspect-[16/10]"
+            className="md:col-span-8 group relative overflow-hidden bg-cream-soft aspect-[4/5] md:aspect-[16/10]"
           >
             <img
               src={PRODUCTS[7].img}
-              alt="Robe Soirée Nuit Africaine"
+              alt="Robe Soirée Nuit Plissée"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
             />
             <div className="absolute bottom-0 left-0 bg-paper/95 px-6 py-4">
               <p className="label-caps text-zinc-400">Pièce phare</p>
               <p className="font-display text-xl md:text-2xl mt-1 flex items-center gap-2">
-                Robe Soirée Nuit Africaine
+                Robe Soirée Nuit Plissée
                 <ChevronRight className="w-4 h-4 text-accent" />
               </p>
             </div>
@@ -88,24 +88,24 @@ export default function Home() {
           <div className="md:col-span-4 grid gap-4 md:gap-6">
             <Link
               to="/produit/3"
-              className="group relative overflow-hidden bg-zinc-100 aspect-[4/5] md:aspect-auto md:flex-1"
+              className="group relative overflow-hidden bg-cream-soft aspect-[4/5] md:aspect-auto md:flex-1"
             >
               <img
                 src={PRODUCTS[2].img}
-                alt="Trench Beige Kin"
+                alt="Trench Beige Long"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               />
               <div className="absolute bottom-0 left-0 bg-paper/95 px-5 py-3.5">
                 <p className="label-caps text-zinc-400">Saison des pluies</p>
-                <p className="font-display text-lg mt-0.5">Trench Beige Kin</p>
+                <p className="font-display text-lg mt-0.5">Trench Beige Long</p>
               </div>
             </Link>
             <div className="bg-ink text-paper p-8 md:p-10 flex flex-col justify-between aspect-[4/3] md:aspect-auto">
-              <p className="label-caps text-paper/50">Livraison offerte</p>
+              <p className="label-caps text-cream">Livraison offerte</p>
               <p className="font-display text-3xl md:text-4xl leading-tight mt-6">
                 Dès $100, partout en RDC.
               </p>
-              <p className="text-paper/50 text-sm mt-6 leading-relaxed">
+              <p className="text-paper/60 text-sm mt-6 leading-relaxed">
                 Paiement à la livraison, Mobile Money ou carte bancaire.
               </p>
             </div>
@@ -131,7 +131,7 @@ export default function Home() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {CATEGORY_CARDS.map(([c, p]) => (
               <Link key={c} to={`/boutique?cat=${c}`} className="group">
-                <div className="overflow-hidden bg-zinc-100 aspect-[3/4]">
+                <div className="overflow-hidden bg-cream-soft aspect-[3/4]">
                   <img
                     src={p.img}
                     alt={c}
@@ -182,23 +182,16 @@ export default function Home() {
       </section>
 
       {/* Offre de lancement */}
-      <section className="relative overflow-hidden">
-        <img
-          src={PRODUCTS[1].img}
-          alt=""
-          loading="lazy"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-ink/85" />
-        <div className="relative max-w-[1440px] mx-auto px-5 py-14 md:py-20 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 text-paper">
+      <section className="relative overflow-hidden bg-cream">
+        <div className="relative max-w-[1440px] mx-auto px-5 py-14 md:py-20 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 text-ink">
           <div>
-            <p className="label-caps text-accent">Offre de lancement</p>
+            <p className="label-caps text-accent-dark">Offre de lancement</p>
             <h2 className="font-display text-3xl md:text-5xl mt-4 leading-tight">
               −15% sur la collection complète
             </h2>
-            <p className="text-paper/50 text-sm mt-4">
+            <p className="text-zinc-700 text-sm mt-4">
               Code{" "}
-              <span className="text-accent font-semibold tracking-[0.14em]">
+              <span className="text-accent-dark font-semibold tracking-[0.14em]">
                 DEBORAH15
               </span>{" "}
               · valable jusqu'au 31/12/2026
@@ -206,7 +199,7 @@ export default function Home() {
           </div>
           <Button
             asChild
-            className="h-13 py-4 px-10 bg-paper text-ink hover:bg-accent hover:text-paper transition-colors duration-500"
+            className="h-13 py-4 px-10 bg-ink text-paper hover:bg-accent transition-colors duration-500"
           >
             <Link to="/boutique">J'en profite</Link>
           </Button>
@@ -225,21 +218,21 @@ export default function Home() {
               </span>
             </h2>
             <p className="text-zinc-600 leading-relaxed mt-8 max-w-sm">
-              Cette année, la maison célèbre les matières : wax authentique,
-              bogolan teinté à la main, satin et soie. Une garde-robe pensée
-              en pièces durables, à porter seules ou à superposer.
+              Cette saison, la sélection mise sur la jupe longue en maille, le
+              palazzo, le tailoring fluide et le satin. Des pièces à porter
+              seules ou à superposer, pensées pour durer d'une saison à l'autre.
             </p>
             <Link
               to="/a-propos"
               className="label-caps text-ink border-b border-ink pb-1 hover:text-accent hover:border-accent transition-colors duration-500 inline-block mt-8"
             >
-              Lire le lookbook
+              Découvrir la maison
             </Link>
           </div>
           <div className="md:col-span-7">
             <Link
               to="/produit/7"
-              className="group relative overflow-hidden bg-zinc-100 aspect-[16/10] block"
+              className="group relative overflow-hidden bg-cream-soft aspect-[16/10] block"
             >
               <img
                 src={PRODUCTS[6].img}
