@@ -13,7 +13,7 @@ export default function About() {
         <div className="md:col-span-7">
           <div className="overflow-hidden bg-cream-soft aspect-[4/3]">
             <img
-              src={IMG("1552710307-537199cd41c0", 1000, 750)}
+              src={IMG("1737357126863-c6e6b1fff33d", 1000, 750)}
               alt="Pièces de la collection Deborah Fashion"
               className="w-full h-full object-cover"
             />
