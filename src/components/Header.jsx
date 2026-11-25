@@ -8,7 +8,7 @@ const NAV = [
   ["Accueil", "/"],
   ["Boutique", "/boutique"],
   ["Nouveautés", "/boutique?cat=Robes"],
-  ["À propos", "/a-propos"],
+  ["Notre histoire", "/a-propos"],
 ];
 
 export default function Header() {
@@ -18,7 +18,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50">
       <div className="bg-ink text-paper text-center py-2.5 px-4 text-[10px] uppercase tracking-[0.28em]">
-        Livraison offerte dès $100 — Boutique de Kinshasa
+        Grandes marques internationales · Livraison offerte dès $100 · Kinshasa
       </div>
       <div className="bg-paper/95 backdrop-blur border-b border-zinc-200">
         <div className="max-w-[1440px] mx-auto px-5 md:px-10 h-16 md:h-20 flex items-center gap-6">
@@ -62,7 +62,7 @@ export default function Header() {
             </button>
             <button
               className="hidden sm:block text-ink/60 hover:text-accent transition-colors duration-300"
-              aria-label=" Favoris"
+              aria-label="Favoris"
             >
               <Heart className="w-[18px] h-[18px]" strokeWidth={1.5} />
             </button>

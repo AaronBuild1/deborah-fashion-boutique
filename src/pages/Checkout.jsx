@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Check, X, ShoppingBag } from "lucide-react";
-import { PRODUCTS, fmt, FREE_SHIPPING_THRESHOLD, SHIPPING_FEE } from "../data/products";
+import { fmt, FREE_SHIPPING_THRESHOLD, SHIPPING_FEE } from "../data/products";
 import { useCart } from "../store/cart";
 import { Button, Input } from "../components/ui";
 
@@ -32,13 +32,12 @@ export default function Checkout() {
     return (
       <div className="max-w-lg mx-auto px-5 py-24 text-center">
         <div className="w-16 h-16 bg-ink flex items-center justify-center mx-auto">
-          <Check className="w-7 h-7 text-accent" strokeWidth={1.5} />
+          <Check className="w-7 h-7 text-cream" strokeWidth={1.5} />
         </div>
         <h1 className="font-display text-3xl md:text-4xl mt-8">Commande confirmée</h1>
         <p className="text-zinc-500 mt-4 leading-relaxed">
-          Merci pour votre confiance. Un message WhatsApp de confirmation arrive
-          d'ici quelques minutes. Ceci est une maquette : aucune commande réelle
-          n'a été passée.
+          Merci pour votre confiance. Un message WhatsApp de confirmation vous
+          sera envoyé d'ici quelques minutes.
         </p>
         <Button
           asChild
@@ -83,7 +82,7 @@ export default function Checkout() {
                 key={m}
                 className="flex items-center gap-3 text-sm text-zinc-600 cursor-pointer hover:text-ink transition-colors duration-300"
               >
-                <input type="radio" name="paiement" defaultChecked={i === 0} className="accent-[#e11d48]" />
+                <input type="radio" name="paiement" defaultChecked={i === 0} className="accent-accent" />
                 {m}
               </label>
             ))}
